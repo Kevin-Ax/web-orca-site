@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "name": "Agenda",
+      "value": 60,
+      "description": "Sistema que permite agendar e gerenciar atividades e eventos."
+    },
+    {
+      "name": "Banner",
+      "value": 60,
+      "description": "Imagem estática no topo do site."
+    },
+    {
+      "name": "Banner slideshow",
+      "value": 90,
+      "description": "Slideshow com transição de imagens que será exibido no topo do site."
+    },
+    {
+      "name": "Calendário simples",
+      "value": 40,
+      "description": "Exibe um calendário simples no site."
+    },
+    {
+      "name": "Carta de serviços/Nossos produtos",
+      "value": 55,
+      "description": "Página que exibe os produtos e/ou serviços prestados pela empresa."
+    },
+    {
+      "name": "Clientes",
+      "value": 75,
+      "description": "Página que exibe os clientes da empresa."
+    },
+    {
+      "name": "Clima Tempo",
+      "value": 55,
+      "description": "Permite visualizar a previsão do tempo de uma determinada cidade."
+    },
+    {
+      "name": "Comentários nas postagens",
+      "value": 90,
+      "description": "Sistema que permite que os clientes comentem as postagens do site. Os comentários serão exibidos na página principal do site, mediante a aprovação do administrador."
+    }
+  ]
+}

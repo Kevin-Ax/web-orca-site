@@ -5,7 +5,7 @@ import { Header } from "./Header";
 
 interface LayoutProps {
     tabTitle: string;
-    children: React.ReactNode;
+    children: any;
 }
 
 
