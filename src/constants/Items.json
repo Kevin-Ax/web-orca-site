@@ -39,6 +39,211 @@
       "name": "Comentários nas postagens",
       "value": 90,
       "description": "Sistema que permite que os clientes comentem as postagens do site. Os comentários serão exibidos na página principal do site, mediante a aprovação do administrador."
+    },
+    {
+      "name": "Contador de visitas",
+      "value": 45,
+      "description": "Exibe quantidade de visualizações do site"
+    },
+    {
+      "name": "Contador regressivo de dias",
+      "value": 45,
+      "description": "Sistema que conta os dias, horas, minutos e segundos que estão faltando para determinado evento."
+    },
+    {
+      "name": "Contrate-nos",
+      "value": 75,
+      "description": "Formulário que permite a contratação dos serviços da empresa."
+    },
+    {
+      "name": "Depoimentos",
+      "value": 60,
+      "description": "Seção para exibição de depoimentos de clientes, com animação na transição"
+    },
+    {
+      "name": "Download e Uploads",
+      "value": 75,
+      "description": "Sistema que permite o download de arquivos do site."
+    },
+    {
+      "name": "E-commerce",
+      "value": 3000,
+      "description": "Sistema que permite o gerenciamento da venda on-line de produtos."
+    },
+    {
+      "name": "Enquetes",
+      "value": 45,
+      "description": "Permite que o administrador do site faça uma pergunta para que os usuários respondam."
+    },
+    {
+      "name": "Estatísticas do site (Analytics)",
+      "value": 60,
+      "description": "Uso da ferramenta (Google Analytics), que permite a visualização de relatórios do número de acessos ao site, origem dos acessos, e erros em páginas."
+    },
+    {
+      "name": "Eventos",
+      "value": 100,
+      "description": "Sistema que permite a postagem de eventos na forma de notícias, podendo dividi-los em áreas"
+    },
+    {
+      "name": "Fale conosco",
+      "value": 75,
+      "description": "Formulário de contato que permite o envio de solicitações ou sugestões do site para uma ou mais contas de e-mail."
+    },
+    {
+      "name": "FAQ",
+      "value": 45,
+      "description": "Permite aos usuários do site verificar algumas perguntas frequentes e suas respectivas respostas. É útil para tirar dúvida dos participantes."
+    },
+    {
+      "name": "Funções extras",
+      "value": 200,
+      "description": "Use esse campo para uma função que não se encontra no banco de dados NB."
+    },
+    {
+      "name": "Galeria de imagens",
+      "value": 75,
+      "description": "Página do site que permite a postagem de fotos. As fotos podem ser organizadas por seções (álbuns)."
+    },
+    {
+      "name": "Galeria de vídeos",
+      "value": 75,
+      "description": "Página do site que permite a postagem de vídeos. Eles podem ser organizados por seções."
+    },
+    {
+      "name": "Google maps",
+      "value": 60,
+      "description": "Página que irá conter o endereço e o mapa gerado pelo Google Apps."
+    },
+    {
+      "name": "Indique nossos produtos/serviços",
+      "value": 150,
+      "description": "Os usuários podem informar e-mails de seus amigos e o sistema enviará um convite para ver a página do serviço/produto."
+    },
+    {
+      "name": "Mapa do site",
+      "value": 60,
+      "description": "Exibe a representação hierárquica da estrutura do site."
+    },
+    {
+      "name": "MEJ (informações sobre o MEJ)",
+      "value": 45,
+      "description": "Página que contém informações sobre o Movimento Empresa Júnior."
+    },
+    {
+      "name": "Membros da empresa",
+      "value": 75,
+      "description": "Página que exibe os membros da empresa, podendo separá-los por área de atuação e/ou cargo."
+    },
+    {
+      "name": "Mídias sociais",
+      "value": 75,
+      "description": "Faz a conexão entre o Twitter, o Facebook e o site."
+    },
+    {
+      "name": "Migração de hospedagem",
+      "value": 120,
+      "description": "Migração dos arquivos do site do nosso servidor para a hospedagem do cliente."
+    },
+    {
+      "name": "Módulo SEO",
+      "value": 75,
+      "description": "Práticas e ferramentas para posicionar melhor o conteúdo do site nos motores de busca como, por exemplo, o Google."
+    },
+    {
+      "name": "Newsletter",
+      "value": 65,
+      "description": "Sistema que permite o envio de notícias às pessoas que se cadastrarem na newsletter."
+    },
+    {
+      "name": "Notícias",
+      "value": 115,
+      "description": "Sistema que permite a publicação de notícias sobre a empresa."
+    },
+    {
+      "name": "Origem dos acessos",
+      "value": 55,
+      "description": "Permite saber qual a página da web que levou os usuários até o seu site."
+    },
+    {
+      "name": "Pagemento online",
+      "value": 250,
+      "description": "Redireciona o usuário para um sistema de pagamento de terceiro, geralmente o Pag Seguro."
+    },
+    {
+      "name": "Página estática",
+      "value": 45,
+      "description": "Página contendo apenas conteúdo estático (imagens, texto)"
+    },
+    {
+      "name": "Parceiros",
+      "value": 65,
+      "description": "Sistema que exibe imagens e links dos parceiros, com animação na transição das imagens."
+    },
+    {
+      "name": "Patrocinadores",
+      "value": 65,
+      "description": "Sistema que exibe imagens e links dos patrocinadores, com animação na transição das imagens."
+    },
+    {
+      "name": "Portfólio",
+      "value": 75,
+      "description": "Página que exibe os serviços já realizados pela empresa."
+    },
+    {
+      "name": "Processo seletivo",
+      "value": 75,
+      "description": "Página com informações sobre o processo seletivo da empresa."
+    },
+    {
+      "name": "Sistema de busca",
+      "value": 60,
+      "description": "Sistema que permite que o usuário faça buscas por palavras chave no conteúdo do site."
+    },
+    {
+      "name": "Sistema de login (multiusuário)",
+      "value": 115,
+      "description": "Sistema que permite ao integrante da comissão ter acesso á uma área restrita do site mediante apresentação de login e senha."
+    },
+    {
+      "name": "Sistema de reservas",
+      "value": 1200,
+      "description": "Sistema que permite que o usuário reserve quartos de hotel, de acordo com a disponibilidade. É possível exibir os quartos e valores das diárias no site"
+    },
+    {
+      "name": "Sobre nós",
+      "value": 60,
+      "description": "Página contendo informações sobre a empresa (Quem somos)"
+    },
+    {
+      "name": "Suporte online",
+      "value": 115,
+      "description": "Permite que a empresa atenda seus clientes por meio de um bate-papo no site."
+    },
+    {
+      "name": "Tradutor para 1 idioma",
+      "value": 40,
+      "description": "Traduz todo o conteúdo do site para um outro idioma."
+    },
+    {
+      "name": "Tradutor para 2 idiomas",
+      "value": 45,
+      "description": "Traduz todo o conteúdo do site para dois idiomas. A inclusão deste item exclui o item acima."
+    },
+    {
+      "name": "Tradutor para 4 idiomas",
+      "value": 60,
+      "description": "Traduz todo o conteúdo do site para quatro idiomas. A inclusão deste item exclui o item acima."
+    },
+    {
+      "name": "Usuários online",
+      "value": 40,
+      "description": "Exibe a quantidade de usuários que estão vendo o sistema em tempo real."
+    },
+    {
+      "name": "Wrapper (frame)",
+      "value": 60,
+      "description": "Permite inserir no site conteúdo de sites externos, arquivos em outras linguagens de programação, formulários etc. "
     }
   ]
 }

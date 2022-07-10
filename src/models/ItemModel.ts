@@ -27,7 +27,7 @@ export class ItemModel implements ItemInterface {
     return this.#value
   }
 
-  getValueFormated() {
+  getValueFormatted() {
     return new Intl.NumberFormat('pt-br', {
       style: 'currency',
       currency: 'BRL',
