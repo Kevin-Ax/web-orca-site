@@ -34,6 +34,12 @@ export class ItemModel implements ItemInterface {
     }).format(this.#value)
   }
 
+  getNameFormatted() {
+    const name = this.#name
+    const titleCapitalized = name.charAt(0).toUpperCase() + name.slice(1)
+    return titleCapitalized
+  }
+
   toJson() {
     return {
       name: this.#name,

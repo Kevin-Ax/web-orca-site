@@ -17,7 +17,7 @@ export function Layout({ children, tabTitle }: LayoutProps) {
             </Head>
             <Header />
 
-            <main className="flex-grow max-w-6xl w-full">
+            <main className="flex-grow max-w-6xl w-full flex items-center justify-center">
                 {children}
             </main>
 
