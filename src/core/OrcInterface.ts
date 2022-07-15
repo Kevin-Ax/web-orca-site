@@ -1,9 +1,9 @@
-import { ItemModel } from '../models/ItemModel'
+import { OrcItemsInterface } from './OrcItemsInterface'
 
 export interface OrcInterface {
   readonly clientName: string
   readonly productVision: string
-  items: ItemModel[]
+  items: OrcItemsInterface[]
   total: number
 
   generateJson: () => Object

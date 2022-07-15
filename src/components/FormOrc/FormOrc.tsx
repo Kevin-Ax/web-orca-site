@@ -1,6 +1,8 @@
-import { Form, Input, Select, Tooltip } from "antd";
+import { Button, Form, InputNumber, Tooltip } from "antd";
 import { CSSProperties } from "react";
+import { useOrc } from "../../data/hooks/useOrc";
 import { ItemModel } from "../../models/ItemModel";
+import { getNotNullFromObjectBasedOnItemsArray } from "../../utils/functions";
 import { icons } from "../icons";
 
 interface FormOrcProps {
@@ -9,42 +11,49 @@ interface FormOrcProps {
 }
 
 const FormStyle: CSSProperties = {
-    width: "50%",
+    width: "80%",
 };
 
-const selectStyle: CSSProperties = {
-    width: "150px",
+const FormItemStyle: CSSProperties = {
+    marginRight: "10px"
+
 };
 
-const formItemLayout = {
+const FormLayout = {
     labelCol: { span: 10 },
-    wrapperCol: { span: 14 },
+    wrapperCol: { span: 24 },
 };
 
 export function FormOrc({ items, title }: FormOrcProps) {
 
-    const { Option } = Select;
-    const oneToFive = [1, 2, 3, 4, 5];
+    const { addItemsToOrcamento } = useOrc();
+
+    function handleSubmit(form: Record<string, unknown>) {
+        const newItems = getNotNullFromObjectBasedOnItemsArray(form, items);
+        addItemsToOrcamento(newItems);
+    }
 
     return (
-        <Form {...formItemLayout} style={FormStyle} name={title} labelWrap>
-            {items.map(item => (
-                <Form.Item labelAlign="right" label={item.getNameFormatted()} name={item.name} >
-                    <span className="flex items-center gap-x-2">
-                        <Select style={selectStyle} allowClear>
-                            {oneToFive.map(option => (
-                                <Option value={option}>
-                                    {option}
-                                </Option>
-                            ))}
-                        </Select>
-                        <Tooltip title={item.description}>
-                            {icons.info}
-                        </Tooltip>
-                    </span>
+        <Form {...FormLayout} style={FormStyle} name={title} onFinish={handleSubmit} labelWrap>
+            {items.map((item, index) => (
+                <Form.Item key={index} labelAlign="right" label={item.getNameFormatted()} >
+
+                    <Form.Item style={FormItemStyle} name={item.name} noStyle>
+                        <InputNumber placeholder="0..." min={0} />
+                    </Form.Item>
+
+                    <Tooltip title={item.description}>
+                        {icons.info}
+                    </Tooltip>
+
 
                 </Form.Item>
             ))}
+            <Form.Item>
+                <Button htmlType="submit">
+                    Fazer orçamento
+                </Button>
+            </Form.Item>
         </Form>
     );
 }

@@ -1,16 +1,17 @@
 import { OrcInterface } from '../core/OrcInterface'
+import { OrcItemsInterface } from '../core/OrcItemsInterface'
 import { ItemModel } from './ItemModel'
 
 export class OrcModel implements OrcInterface {
   readonly #clientName: string
   readonly #productVision: string
-  #items: ItemModel[]
+  #items: OrcItemsInterface[]
   #total: number
 
   private constructor(
     clientName: string,
     productVision: string,
-    items: ItemModel[],
+    items: OrcItemsInterface[],
     total: number
   ) {
     this.#clientName = clientName
@@ -43,9 +44,9 @@ export class OrcModel implements OrcInterface {
     return this.#total
   }
 
-  addItem(Item: ItemModel) {
+  addItem(Item: OrcItemsInterface) {
     this.#items.push(Item)
-    this.#total += Item.value
+    this.#total += Item.item.value * Item.qtde
   }
 
   generateJson() {
