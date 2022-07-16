@@ -7,7 +7,7 @@ import { usePush } from "../data/hooks/usePush";
 
 const formLayout = {
     labelCol: { span: 10 },
-    wrapperCol: { span: 20 },
+    wrapperCol: { span: 25 },
 };
 
 const Home: NextPage = () => {
@@ -24,12 +24,16 @@ const Home: NextPage = () => {
 
     return (
         <Layout tabTitle="Identificação">
-            <div className="">
+            <div className="w-1/3">
                 <Form {...formLayout} labelAlign="left" onFinish={handleSubmit}>
-                    <Form.Item label="Nome do cliente" name={"clientName"}>
+                    <Form.Item label="Nome do cliente" name={"clientName"}
+                        rules={[{ required: true, message: "Não esqueça de colocar seu nome" }]}
+                    >
                         <Input type={"text"} />
                     </Form.Item>
-                    <Form.Item label="Visão do produto" name={"productVision"}>
+                    <Form.Item label="Visão do produto" name={"productVision"}
+                        rules={[{ required: true, message: "Conte um pouco sobre o produto que você quer" }]}
+                    >
                         <TextArea />
                     </Form.Item>
                     <Form.Item label=" " colon={false}>

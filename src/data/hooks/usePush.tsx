@@ -7,8 +7,18 @@ export function usePush() {
         push('/items');
     }
 
+    function pushToIdentificationPage() {
+        push('/');
+    }
+
+    function pushToBudgetPage() {
+        push('/budget');
+    }
+
 
     return {
-        pushToItemsPage
+        pushToItemsPage,
+        pushToIdentificationPage,
+        pushToBudgetPage
     };
 }

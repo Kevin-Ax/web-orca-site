@@ -1,6 +1,6 @@
-import { ItemModel } from '../models/ItemModel'
+import { ItemInterface } from './ItemInterface'
 
 export interface OrcItemsInterface {
-  item: ItemModel
+  item: ItemInterface
   qtde: number
 }

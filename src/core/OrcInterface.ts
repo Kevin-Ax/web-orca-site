@@ -6,5 +6,6 @@ export interface OrcInterface {
   items: OrcItemsInterface[]
   total: number
 
-  generateJson: () => Object
+  addItem: (newItem: OrcItemsInterface) => void
+  generateJson: () => Record<string, unknown>
 }

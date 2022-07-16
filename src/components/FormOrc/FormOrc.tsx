@@ -26,11 +26,13 @@ const FormLayout = {
 
 export function FormOrc({ items, title }: FormOrcProps) {
 
-    const { addItemsToOrcamento } = useOrc();
+    const { addItemsToOrcamento, orcamento } = useOrc();
 
     function handleSubmit(form: Record<string, unknown>) {
         const newItems = getNotNullFromObjectBasedOnItemsArray(form, items);
         addItemsToOrcamento(newItems);
+        console.log("orcamento: ", JSON.stringify(orcamento));
+        console.log("items da pagina: ", JSON.stringify(newItems));
     }
 
     return (
