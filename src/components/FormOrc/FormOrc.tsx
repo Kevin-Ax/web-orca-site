@@ -15,7 +15,7 @@ const FormStyle: CSSProperties = {
 };
 
 const FormItemStyle: CSSProperties = {
-    marginRight: "10px"
+    marginLeft: "10px"
 
 };
 
@@ -40,11 +40,11 @@ export function FormOrc({ items, title }: FormOrcProps) {
             {items.map((item, index) => (
                 <Form.Item key={index} labelAlign="right" label={item.getNameFormatted()} >
 
-                    <Form.Item style={FormItemStyle} name={item.name} noStyle>
+                    <Form.Item name={item.name} noStyle>
                         <InputNumber placeholder="0..." min={0} />
                     </Form.Item>
 
-                    <Tooltip title={item.description}>
+                    <Tooltip style={FormItemStyle} title={item.description}>
                         {icons.info}
                     </Tooltip>
 
