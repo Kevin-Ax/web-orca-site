@@ -8,4 +8,5 @@ export interface OrcInterface {
 
   addItem: (newItem: OrcItemsInterface) => void
   generateJson: () => Record<string, unknown>
+  clear: () => void
 }

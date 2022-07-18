@@ -7,6 +7,7 @@ import { usePush } from "../hooks/usePush";
 type OrcContextType = {
     initializeOrcamento: (clientName: string, productVision: string) => void;
     addItemsToOrcamento: (newItems: OrcItemsInterface[]) => void;
+    clearBudget: () => void;
     orcamento: OrcModel | null;
 };
 
@@ -18,7 +19,7 @@ export function OrcProvider({ children }: { children: React.ReactNode; }) {
     const [nomeCliente, setNomeCliente] = useLocalStorage("nomeCliente");
     const [productVision, setProductVision] = useLocalStorage("productVision");
 
-    const { pushToIdentificationPage } = usePush();
+    const { pushToItemsPage } = usePush();
 
     // Ira buscar no localStorage se ja tem nome do cliente e visao de produto para caso a pagina 
     // seja resetada e nao ter que voltar na tela inicial
@@ -26,7 +27,9 @@ export function OrcProvider({ children }: { children: React.ReactNode; }) {
     useEffect(() => {
         if (!orcamento) {
             setOrcamento(OrcModel.create(nomeCliente, productVision));
+            pushToItemsPage();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [orcamento, nomeCliente, productVision]);
 
     function initializeOrcamento(clientName: string, productVision: string) {
@@ -41,8 +44,14 @@ export function OrcProvider({ children }: { children: React.ReactNode; }) {
         if (orcamento) {
             newItems.map(newIt => setOrcamento(orcamento.addItem(newIt)));
         }
-        else {
-            pushToIdentificationPage();
+    }
+
+    function clearBudget() {
+        if (orcamento) {
+            const clearedBudget = orcamento.clear();
+            setOrcamento(clearedBudget);
+
+            console.log("limpou o carrinho");
         }
     }
 
@@ -50,6 +59,7 @@ export function OrcProvider({ children }: { children: React.ReactNode; }) {
         <OrcContext.Provider value={{
             initializeOrcamento,
             addItemsToOrcamento,
+            clearBudget,
             orcamento
         }} >
             {children}

@@ -29,3 +29,10 @@ export function getNotNullFromObjectBasedOnItemsArray(
   }
   return itemsNotNull
 }
+
+export function formatPriceToBRL(price: number) {
+  return new Intl.NumberFormat('pt-br', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price)
+}

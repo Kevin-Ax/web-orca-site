@@ -15,24 +15,27 @@ const mockItem = {
     description: "Usado para testar"
 };
 
+const mockItem2 = {
+    name: "mockItem2",
+    value: 15,
+    description: "Usado para testar soma"
+};
+
 
 let Orc: OrcInterface = OrcModel.create(mockClient.clientName, mockClient.productVision);
-let item: ItemInterface = ItemModel.create(mockItem.name, mockItem.value, mockItem.description);
-let orcItem: OrcItemsInterface = {
+const item: ItemInterface = ItemModel.create(mockItem.name, mockItem.value, mockItem.description);
+const orcItem: OrcItemsInterface = {
     item: item,
     qtde: 3
+};
+const item2: ItemInterface = ItemModel.create(mockItem2.name, mockItem2.value, mockItem2.description);
+const orcItem2: OrcItemsInterface = {
+    item: item2,
+    qtde: 2
 };
 
 beforeEach(() => {
     Orc = OrcModel.create(mockClient.clientName, mockClient.productVision);
-});
-
-beforeAll(() => {
-    item = ItemModel.create(mockItem.name, mockItem.value, mockItem.description);
-    orcItem = {
-        item: item,
-        qtde: 3
-    };
 });
 
 describe('Orc class', () => {
@@ -57,7 +60,28 @@ describe('Orc class', () => {
         expect(Orc.total).toBe(30);
     });
 
+    it('should update value when two different items were added', () => {
+        expect(Orc.total).toBe(0);
 
+        Orc.addItem(orcItem);
+        Orc.addItem(orcItem2);
 
+        expect(Orc.total).toBe(60);
+    });
+
+    it('should clear budget', () => {
+
+        expect(Orc.total).toBe(0);
+
+        Orc.addItem(orcItem);
+        Orc.addItem(orcItem2);
+
+        expect(Orc.total).toBe(60);
+
+        Orc.clear();
+
+        expect(Orc.items.length).toBe(0);
+        expect(Orc.total).toBe(0);
+    });
 
 });

@@ -1,6 +1,8 @@
-import { Button, Form, InputNumber, Tooltip } from "antd";
-import { CSSProperties } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { Button, Form, InputNumber, Space, Tooltip } from "antd";
+import { CSSProperties, useCallback, useEffect } from "react";
 import { useOrc } from "../../data/hooks/useOrc";
+import { usePush } from "../../data/hooks/usePush";
 import { ItemModel } from "../../models/ItemModel";
 import { getNotNullFromObjectBasedOnItemsArray } from "../../utils/functions";
 import { icons } from "../icons";
@@ -26,33 +28,46 @@ const FormLayout = {
 
 export function FormOrc({ items, title }: FormOrcProps) {
 
-    const { addItemsToOrcamento, orcamento } = useOrc();
+    const { addItemsToOrcamento, clearBudget } = useOrc();
+    const { pushToBudgetPage } = usePush();
 
     function handleSubmit(form: Record<string, unknown>) {
         const newItems = getNotNullFromObjectBasedOnItemsArray(form, items);
         addItemsToOrcamento(newItems);
-        console.log("orcamento: ", JSON.stringify(orcamento));
-        console.log("items da pagina: ", JSON.stringify(newItems));
+
+        pushToBudgetPage();
     }
+
+    const handleClearBudget = useCallback(() => {
+        clearBudget();
+    }, []);
+
+    useEffect(() => {
+        handleClearBudget();
+    }, [handleClearBudget]);
 
     return (
         <Form {...FormLayout} style={FormStyle} name={title} onFinish={handleSubmit} labelWrap>
             {items.map((item, index) => (
+
                 <Form.Item key={index} labelAlign="right" label={item.getNameFormatted()} >
+                    <Space>
 
-                    <Form.Item name={item.name} noStyle>
-                        <InputNumber placeholder="0..." min={0} />
-                    </Form.Item>
+                        <Form.Item name={item.name} noStyle>
+                            <InputNumber placeholder="0..." min={0} />
+                        </Form.Item>
 
-                    <Tooltip style={FormItemStyle} title={item.description}>
-                        {icons.info}
-                    </Tooltip>
+                        <Tooltip style={FormItemStyle} title={item.description}>
+                            {icons.info}
+                        </Tooltip>
+                    </Space>
 
 
                 </Form.Item>
+
             ))}
             <Form.Item>
-                <Button htmlType="submit">
+                <Button style={{ display: "flex", justifyContent: "center", width: "30%" }} htmlType="submit">
                     Fazer orçamento
                 </Button>
             </Form.Item>

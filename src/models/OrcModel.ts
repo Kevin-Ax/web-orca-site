@@ -55,12 +55,26 @@ export class OrcModel implements OrcInterface {
     )
   }
 
+  clear() {
+    this.#items = []
+    this.#total = 0
+
+    return this
+  }
+
+  getValueFormatted() {
+    return new Intl.NumberFormat('pt-br', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(this.#total)
+  }
+
   generateJson() {
     return {
       clientName: this.#clientName,
       productVision: this.#productVision,
       total: this.#total,
-      items: this.#items.map((it) => it.item.toJson()),
+      items: this.#items.map((it) => it.item.name),
     }
   }
 }
