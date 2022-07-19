@@ -4,32 +4,42 @@ import { OrcItemsInterface } from '../core/OrcItemsInterface'
 export class OrcModel implements OrcInterface {
   readonly #clientName: string
   readonly #productVision: string
+  readonly #clientEmail: string
   #items: OrcItemsInterface[]
   #total: number
 
   private constructor(
     clientName: string,
+    clientEmail: string,
     productVision: string,
     items: OrcItemsInterface[],
-    total: number
+    total: number,
+
   ) {
     this.#clientName = clientName
     this.#productVision = productVision
     this.#items = items
     this.#total = total
+    this.#clientEmail = clientEmail
   }
 
   static create(
     clientName: string,
+    clientEmail: string,
     productVision: string,
     items = [],
-    total = 0
+    total = 0,
+
   ) {
-    return new OrcModel(clientName, productVision, items, total)
+    return new OrcModel(clientName, clientEmail, productVision, items, total)
   }
 
   get clientName() {
     return this.#clientName
+  }
+
+  get clientEmail() {
+    return this.#clientEmail
   }
 
   get productVision() {
@@ -49,9 +59,11 @@ export class OrcModel implements OrcInterface {
 
     return new OrcModel(
       this.#clientName,
+        this.#clientEmail,
       this.#productVision,
       this.#items,
-      this.#total
+      this.#total,
+
     )
   }
 
@@ -72,6 +84,7 @@ export class OrcModel implements OrcInterface {
   generateJson() {
     return {
       clientName: this.#clientName,
+      clientEmail: this.#clientEmail,
       productVision: this.#productVision,
       total: this.#total,
       items: this.#items.map((it) => it.item.name),

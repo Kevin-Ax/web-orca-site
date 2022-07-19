@@ -35,5 +35,8 @@ yarn-error.log*
 .vscode
 .swc
 
+#inteliJJ
+/idea
+
 # typescript
 *.tsbuildinfo

@@ -1,7 +1,15 @@
 {
   "name": "web-orca-site",
+  "author": {
+    "name": "Lademir Junior",
+    "email": "lademirjunior@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.19"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

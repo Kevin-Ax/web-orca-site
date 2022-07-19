@@ -18,7 +18,7 @@ const Home: NextPage = () => {
     const { TextArea } = Input;
 
     function handleSubmit(values: Record<string, string>) {
-        initializeOrcamento(values.clientName, values.productVision);
+        initializeOrcamento(values.clientName, values.productVision, values.clientEmail);
         pushToItemsPage();
     }
 
@@ -35,6 +35,12 @@ const Home: NextPage = () => {
                         rules={[{ required: true, message: "Conte um pouco sobre o produto que você quer" }]}
                     >
                         <TextArea />
+                    </Form.Item>
+                    <Form.Item label={"Seu Email"} name={"clientEmail"}
+                        rules={[{required: true, type: "email" , message: "Digite um email válido"}]}
+                    >
+
+                        <Input type={"email"} />
                     </Form.Item>
                     <Form.Item label=" " colon={false}>
                         <Button htmlType="submit">
